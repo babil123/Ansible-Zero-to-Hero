@@ -37,7 +37,84 @@ Ansible needs root privileges for most administrative tasks, achieved via the `b
 | `ansible_become_method: sudo` | Specifies the tool (default is `sudo`). | |
 | `ansible_become_user: root` | The user to become (defaults to `root`). | |
 
-**Key Best Practice:** Configure the remote user for `NOPASSWD` sudo access via the `/etc/sudoers` file to eliminate password prompts during automation.
+This is a critical section for any Ansible documentation. It moves from theory to the essential practical steps required for seamless automation.
+
+## Key Best Practice: Enabling Passwordless Privilege Escalation (`NOPASSWD`)
+
+### 🔑 Why `NOPASSWD` is Non-Negotiable
+
+When a task requires elevated privileges (i.e., when `ansible_become: yes` is set), Ansible relies on the remote user to execute the privilege escalation command (`sudo`).
+
+  * **The Problem:** By default, the `sudo` command prompts the user for their password. Since Ansible runs commands non-interactively, it cannot respond to this password prompt. The playbook execution will simply halt and eventually time out.
+  * **The Solution:** We must configure the operating system of the Managed Node to allow the Ansible connecting user (the `ansible_user`) to run `sudo` **without a password**. This is achieved using the `NOPASSWD` directive in the `sudoers` configuration.
+
+-----
+
+### Step-by-Step Guide to Implementing NOPASSWD
+
+This is a **one-time manual setup** that must be performed on **each Managed Node**. You must use your initial SSH credentials (the `.pem` key) to perform this configuration.
+
+#### Prerequisites
+
+  * You are logged into the Managed Node (e.g., EC2 instance) as a user with existing `sudo` permissions (e.g., `ec2-user` or `ubuntu`).
+  * The dedicated Ansible connecting user (e.g., `devops_user`) already exists on the Managed Node and has your public SSH key installed (from the previous setup steps).
+
+#### Step 1: Create the Sudoers Configuration File
+
+We will create a new file in the `/etc/sudoers.d/` directory. This is the secure, recommended way to modify `sudo` rules without risking corruption of the main `/etc/sudoers` file.
+
+**On the Managed Node:**
+
+```bash
+# Use the root-level 'visudo' command with the -f flag to safely create the file.
+# We name it '90-ansible' for organization and to ensure it loads late.
+sudo visudo -f /etc/sudoers.d/90-ansible
+```
+
+#### Step 2: Add the NOPASSWD Rule
+
+Inside the editor window that opens, add the following line.
+
+  * **Crucial:** Replace `devops_user` with the actual username Ansible uses to connect (e.g., `ec2-user`, `ubuntu`, or your custom user).
+
+<!-- end list -->
+
+```
+# This grants the 'devops_user' passwordless sudo access to ALL commands.
+devops_user ALL=(ALL) NOPASSWD: ALL
+```
+
+**Explanation of the line:**
+
+| Segment | Meaning |
+| :--- | :--- |
+| `devops_user` | The specific user account this rule applies to. |
+| `ALL=` | This user can run commands from `ALL` terminals. |
+| `(ALL)` | This user can run commands as `ALL` other users (e.g., root, apache). |
+| `NOPASSWD:` | **The critical directive:** Do not prompt for a password. |
+| `ALL` | The user can run `ALL` commands. |
+
+#### Step 3: Save the File and Verify Syntax
+
+  * Save and exit the file. (In `vim`/`vi`, press `Esc`, type `:wq`, and press Enter).
+  * The `visudo` command will automatically check the syntax. If there are no errors, the file is ready.
+
+#### Step 4: Final Verification (Test as the Ansible User)
+
+Log out of your current session, and log back in as the *actual* user Ansible connects as (`devops_user` or the default user), then test the privilege escalation.
+
+**On the Managed Node (as the `ansible_user`):**
+
+```bash
+# Test running a root command
+sudo whoami
+```
+
+**Expected Result:**
+
+The output should immediately be `root`.
+
+If you receive the output `root` without any password prompt, your Managed Node is correctly configured, and Ansible automation will run without interruption\!
 
 -----
 
