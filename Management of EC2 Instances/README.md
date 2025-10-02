@@ -87,13 +87,46 @@ ec2-web-01 | SUCCESS => {
 }
 ```
 
-### Summary of Keys in Practice
 
-Your two instances are configured correctly because you've used the necessary variables to overcome the standard EC2 authentication challenge:
+### Ansible Inventory File Sample (`inventory.ini`)
 
-| Instance | Connection Detail | Ansible Variable |
-| :--- | :--- | :--- |
-| **ec2-web-01** | Connects to `54.123.45.67` | `ansible_host` |
-| **ec2-web-01** | Logs in as `ec2-user` | `ansible_user` |
-| **ec2-db-01** | Logs in as `ubuntu` | `ansible_user` |
-| **Both** | Authenticates via the shared `.pem` file | `ansible_ssh_private_key_file` (from `[all:vars]`) |
+This sample assumes you have one Amazon Linux instance (`ec2-user`) and one Ubuntu instance (`ubuntu`), both reachable via their public IP addresses and using a single shared SSH key (`my-aws-key.pem`).
+
+```ini
+
+[all:vars]
+ansible_ssh_private_key_file=~/.ssh/my-aws-key.pem
+# The connection method is ssh by default, but it's good practice to specify.
+ansible_connection=ssh
+
+# Host 1: Amazon Linux or RHEL/CentOS instance.
+# Hostname (alias)   ansible_host (Public IP)  ansible_user (default user)
+web_prod_01          ansible_host=54.123.45.67  ansible_user=ec2-user
+
+
+[databases]
+# Host 2: Ubuntu instance. Note the different 'ansible_user'.
+# Hostname (alias)   ansible_host (Public IP)  ansible_user (default user)
+db_staging_01        ansible_host=35.987.65.43  ansible_user=ubuntu
+
+
+[webservers:vars]
+# This variable only applies to hosts in the [webservers] group.
+http_port=80
+```
+
+### How to Use This Sample
+
+1.  **Save the file:** Save the content above as `inventory.ini` in your Ansible project directory.
+2.  **Update variables:** Critically, update the `ansible_ssh_private_key_file` path to point to your actual `.pem` file.
+3.  **Run commands:** Use the `-i` flag to reference the file:
+
+<!-- end list -->
+
+```bash
+# Test connectivity to the web server group
+ansible webservers -i inventory.ini -m ping
+
+# Install a package on the database server instance
+ansible db_staging_01 -i inventory.ini -m package -a "name=postgresql state=latest" --become
+```
