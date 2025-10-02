@@ -1,5 +1,8 @@
 ## Ansible Management of EC2 Instances
 
+<img src="https://github.com/bhuvan-raj/Ansible-Zero-to-Hero/blob/main/assets/ec2.png" alt="Banner" />
+
+
 ### 1\. The Core Principle: Agentless Architecture
 
 Ansible's ability to manage EC2 instances relies on its **agentless** architecture. Unlike systems like Chef or Puppet, Ansible doesn't require special software to be installed on the managed node. It connects using the same method a human administrator would: **SSH** (Secure Shell).
