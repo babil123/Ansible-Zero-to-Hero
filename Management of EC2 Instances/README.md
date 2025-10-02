@@ -98,7 +98,7 @@ This sample assumes you have one Amazon Linux instance (`ec2-user`) and one Ubun
 ansible_ssh_private_key_file=~/.ssh/my-aws-key.pem
 # The connection method is ssh by default, but it's good practice to specify.
 ansible_connection=ssh
-
+[webservers]
 # Host 1: Amazon Linux or RHEL/CentOS instance.
 # Hostname (alias)   ansible_host (Public IP)  ansible_user (default user)
 web_prod_01          ansible_host=54.123.45.67  ansible_user=ec2-user
