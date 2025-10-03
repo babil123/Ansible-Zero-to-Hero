@@ -1,5 +1,7 @@
 # Ansible Ad-Hoc Commands
 
+<img src="https://github.com/bhuvan-raj/Ansible-Zero-to-Hero/blob/main/assets/adhoc.png" alt="Banner" />
+
 ### **1. What are Ad-Hoc Commands?**
 
   * **Definition:** Ad-hoc commands are single-line commands executed from the Ansible **Control Node** to perform a **single, quick task** on one or more **Managed Nodes**.
