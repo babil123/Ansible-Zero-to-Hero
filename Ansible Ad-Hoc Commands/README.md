@@ -55,5 +55,50 @@ ansible <pattern> -m <module> -a "<module_options>" [optional_flags]
 | **Manage Services** | **`service`** | `ansible webservers -b -m service -a "name=httpd state=restarted"` | Restarts the Apache service on all webservers (requires `become`). |
 | **Gather Facts** | **`setup`** | `ansible all -m setup` | Gathers extensive system information (facts) about the managed nodes. |
 
+### **Ad-Hoc Command to Install Nginx**
+
+Since installing a package requires elevated permissions (root/sudo), you must use the `--become` or `-b` flag.
+
+#### **If your managed nodes use `apt` (e.g., Debian, Ubuntu):**
+
+```bash
+ansible all -b -m apt -a "name=nginx state=present"
+```
+
+| Component | Description |
+| :--- | :--- |
+| **`ansible all`** | Targets all hosts defined in your inventory. |
+| **`-b`** | **`--become`**: Executes the task with root privileges (required for installation). |
+| **`-m apt`** | Specifies the **`apt`** module for Debian/Ubuntu systems. |
+| **`-a "..."`** | Arguments for the `apt` module. |
+| **`name=nginx`** | The package to install. |
+| **`state=present`** | Ensures the package is installed (if it's missing, it will install it). |
+
 -----
 
+#### **If your managed nodes use `yum` or `dnf` (e.g., Red Hat, CentOS, Fedora):**
+
+```bash
+ansible all -b -m yum -a "name=nginx state=present"
+```
+
+| Component | Description |
+| :--- | :--- |
+| **`ansible all`** | Targets all hosts defined in your inventory. |
+| **`-b`** | **`--become`**: Executes the task with root privileges. |
+| **`-m yum`** | Specifies the **`yum`** module (or use `-m dnf` for modern Fedora/CentOS/RHEL systems). |
+| **`-a "..."`** | Arguments for the module. |
+| **`name=nginx`** | The package to install. |
+| **`state=present`** | Ensures the package is installed. |
+
+### **To Run and Verify (The Next Step)**
+
+1.  **Run the Installation:**
+    ```bash
+    ansible webservers -b -m apt -a "name=nginx state=present"
+    ```
+2.  **Verify the Service is Running (Optional Next Ad-Hoc Command):**
+    ```bash
+    ansible webservers -b -m service -a "name=nginx state=started"
+    ```
+    *This command ensures that after installation, the service is also running.*
