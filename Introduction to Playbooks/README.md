@@ -1,6 +1,6 @@
 # Ansible Playbooks
 
-<img src="https://github.com/bhuvan-raj/Ansible-Zero-to-Hero/blob/main/assets/playbooks.png" alt="Banner" />
+<img src="https://github.com/bhuvan-raj/Ansible-Zero-to-Hero/blob/main/assets/playbook.jpg" alt="Banner" />
 
 ## 1\. Playbooks: The Blueprint of Automation
 
