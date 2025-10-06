@@ -1,32 +1,7 @@
-# Ansible Playbooks
+# 1. Ansible Playbooks
 
 <img src="https://github.com/bhuvan-raj/Ansible-Zero-to-Hero/blob/main/assets/playbook.jpg" alt="Banner" />
 
-
-## $\text{1. Ansible Galaxy In-depth and Commands}$
-
-**Ansible Galaxy** is the official hub for community-contributed Ansible content, primarily focusing on **Roles** and **Collections** to promote modularity and reusability. It is essential for jumpstarting automation projects.
-
-### $\text{What It Is}$
-
-| Concept | Explanation |
-| :--- | :--- |
-| **Role** | A standardized, portable directory structure that logically groups related tasks, handlers, variables, files, and templates for a single function (e.g., configuring Nginx, setting up PostgreSQL). |
-| **Collection** | The newer format; a complete package of automation content that can include multiple roles, playbooks, modules, and plugins. Collections are versioned and signed. |
-| **Repository** | Ansible Galaxy acts as a central repository (like PyPI for Python or Maven for Java). |
-
-### $\text{Ansible-Galaxy Commands}$
-
-The `ansible-galaxy` command-line tool is used to manage this content:
-
-| Command | Purpose | Example |
-| :--- | :--- | :--- |
-| `ansible-galaxy init` | Creates the standard skeleton directory structure for a new Role. | `ansible-galaxy init my_new_role` |
-| `ansible-galaxy install` | Downloads a Role or Collection from the Galaxy repository. | `ansible-galaxy install geerlingguy.nginx` |
-| `ansible-galaxy list` | Shows all installed Roles and Collections on your local control node. | `ansible-galaxy list` |
-| `ansible-galaxy remove` | Uninstalls a specific Role or Collection. | `ansible-galaxy remove geerlingguy.nginx` |
-
------
 
 ## $\text{2. Core Philosophy}$
 
