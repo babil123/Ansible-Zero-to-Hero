@@ -6,7 +6,7 @@
 Ansible variables are dynamic values used within playbooks, roles, and inventory to enable **customization, flexibility, and reusability** of configurations. Instead of hard-coding specific values (like usernames, package names, or port numbers) directly into tasks, you use variables as placeholders.
 
   * **Purpose:** Variables allow the same playbook or role to be applied across different environments, systems, or contexts by simply changing the variable values.
-  * **Syntax:** Variables are referenced using the Jinja2 templating syntax, enclosed in double curly braces: `{{ variable_name }}`.
+  * **Syntax:** Variables are referenced using the Jinja2 templating syntax, enclosed in double curly braces:  `{{ variable_name }}`.
   * **Naming Rules:** Variable names must:
       * Contain only letters, numbers, and underscores.
       * Start with a letter or an underscore.
