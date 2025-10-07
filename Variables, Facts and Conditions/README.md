@@ -1,3 +1,6 @@
+# Variables, Facts and Conditions
+
+
 ##  What Are Ansible Variables?
 
 Ansible variables are dynamic values used within playbooks, roles, and inventory to enable **customization, flexibility, and reusability** of configurations. Instead of hard-coding specific values (like usernames, package names, or port numbers) directly into tasks, you use variables as placeholders.
