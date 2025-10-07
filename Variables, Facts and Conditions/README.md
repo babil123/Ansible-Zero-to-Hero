@@ -77,6 +77,11 @@ web2
 
 [webservers:vars]
 package_state=present
+
+[database]
+
+db1
+db2
 ```
 
 The variable `package_state` is available to both `web1` and `web2`.
