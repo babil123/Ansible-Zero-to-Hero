@@ -18,27 +18,29 @@ This repository is meticulously organized into key sections, progressing from fu
 ### 2\. Managed Nodes and Inventory Management
 
   * **Description:** Learn how Ansible identifies and connects to the machines it manages. This section focuses on setting up your **Control Node**, configuring **SSH keys**, and mastering the **Inventory** file (static and dynamic).
-  * **Explore:** Navigate to [Managed Nodes and Inventory Management](https://www.google.com/search?q=./Managed%2520Nodes%2520and%2520Inventory%2520Management/) for detailed information.
+  * **Explore:** Navigate to [Managed Nodes and Inventory Management](./Managed%20Nodes%20and%20Inventory%20Management/) for detailed information.
 
 ### 3\. Management of EC2 Instances
 
   * **Description:** Apply your inventory knowledge to a real-world cloud environment. This section details how to dynamically discover, provision, and manage **AWS EC2 instances** using Ansible's cloud-specific modules.
-  * **Explore:** Navigate to [Management of EC2 Instances](https://www.google.com/search?q=./Management%2520of%2520EC2%2520Instances/) for detailed information.
+  * **Explore:** Navigate to [Management of EC2 Instances](./Management%20of%20EC2%20Instances/) for detailed information.
 
 ### 4\. Ansible Ad-Hoc Commands
 
   * **Description:** Master the art of executing quick, one-off commands across your infrastructure. This section is a hands-on guide to using various **Ansible Modules** directly from the command line for tasks like checking status or restarting services.
-  * **Explore:** Navigate to [Ansible Ad-Hoc Commands](https://www.google.com/search?q=./Ansible%2520Ad-Hoc%2520Commands/) for detailed information.
+  * **Explore:** Navigate to [Ansible Ad-Hoc Commands](./Ansible%2520Ad-Hoc%2520Commands/) for detailed information.
 
 ### 5\. Introduction to Playbooks
 
   * **Description:** The heart of Ansible automation. This crucial section introduces the structure of **Playbooks** (written in YAML), defining **Plays** and **Tasks**, using **Handlers**, and understanding the importance of idempotency.
-  * **Explore:** Navigate to [Introduction to Playbooks](https://www.google.com/search?q=./Introduction%2520to%2520Playbooks/) for detailed information.
+  * **Explore:** Navigate to [Introduction to Playbooks](./Introduction%2520to%2520Playbooks/) for detailed information.
 
-### 6\. Variables, Facts and Conditions
+### 6\. Ansible Roles
 
-  * **Description:** Move beyond static automation by leveraging **Variables** (defined at various levels), gathering machine-specific **Facts**, and implementing complex automation logic using **Conditional Statements** ($\text{when:}$).
-  * **Explore:** Navigate to [Variables, Facts and Conditions](https://www.google.com/search?q=./Variables%2520Facts%2520and%2520Conditions/) for detailed information.
+  * **Description:** Roles provide the essential organizational framework for large-scale Ansible projects. They enforce a standardized directory structure to group all related automation assets (tasks, handlers, files, and variables) into reusable units. Mastering roles is the key to writing modular, shareable, and maintainable automation.
+  * **Explore:** Navigate to [Ansible Roles](./Ansible%20Roles/) for detailed information.
+
+  
 
 -----
 
