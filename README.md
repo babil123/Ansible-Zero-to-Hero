@@ -28,12 +28,12 @@ This repository is meticulously organized into key sections, progressing from fu
 ### 4\. Ansible Ad-Hoc Commands
 
   * **Description:** Master the art of executing quick, one-off commands across your infrastructure. This section is a hands-on guide to using various **Ansible Modules** directly from the command line for tasks like checking status or restarting services.
-  * **Explore:** Navigate to [Ansible Ad-Hoc Commands](./Ansible%2520Ad-Hoc%2520Commands/) for detailed information.
+  * **Explore:** Navigate to [Ansible Ad-Hoc Commands](./Ansible%20Ad-Hoc%20Commands/) for detailed information.
 
 ### 5\. Introduction to Playbooks
 
   * **Description:** The heart of Ansible automation. This crucial section introduces the structure of **Playbooks** (written in YAML), defining **Plays** and **Tasks**, using **Handlers**, and understanding the importance of idempotency.
-  * **Explore:** Navigate to [Introduction to Playbooks](./Introduction%2520to%2520Playbooks/) for detailed information.
+  * **Explore:** Navigate to [Introduction to Playbooks](./Introduction%20to%20Playbooks/) for detailed information.
 
 ### 6\. Ansible Roles
 
