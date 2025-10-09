@@ -1,4 +1,6 @@
 # 📘 Ansible Roles
+<img src="https://github.com/bhuvan-raj/Ansible-Zero-to-Hero/blob/main/assets/roles.webp" alt="Banner" />
+
 
 ## 1. What is an Ansible Role?
 
