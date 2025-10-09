@@ -13,7 +13,7 @@ This repository is meticulously organized into key sections, progressing from fu
 ### 1\. Introduction to CM and Ansible
 
   * **Description:** A foundational guide covering **Configuration Management (CM)** principles, the need for automation, and what makes **Ansible** unique (agentless architecture, simplicity, security).
-  * **Explore:** Navigate to [Introduction to CM and Ansible](https://www.google.com/search?q=./Introduction%2520to%2520CM%2520and%2520Ansible/) for detailed information.
+  * **Explore:** Navigate to [Introduction to CM and Ansible](./Introduction%20to%20CM%20and%20Ansible/) for detailed information.
 
 ### 2\. Managed Nodes and Inventory Management
 
