@@ -1,4 +1,6 @@
 ## 1. Introduction to Configuration Management
+<img src="https://github.com/bhuvan-raj/Ansible-Zero-to-Hero/blob/main/assets/conf.webp" alt="Banner" />
+
 
 ### 🔹 What is Configuration Management (CM)?
 
