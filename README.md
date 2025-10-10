@@ -39,6 +39,10 @@ This repository is meticulously organized into key sections, progressing from fu
 
   * **Description:** Roles provide the essential organizational framework for large-scale Ansible projects. They enforce a standardized directory structure to group all related automation assets (tasks, handlers, files, and variables) into reusable units. Mastering roles is the key to writing modular, shareable, and maintainable automation.
   * **Explore:** Navigate to [Ansible Roles](./Ansible%20Roles/) for detailed information.
+### 7\. Ansible Galaxy
+
+  * **Description:** Ansible Galaxy is the central, public repository for the Ansible community, serving as the essential hub for discovering, sharing, and installing reusable automation content. It accelerates projects by providing pre-built components like Roles (self-contained units of configuration) and the newer, more comprehensive Collections (which bundle roles, modules, plugins, and documentation).
+  * **Explore:** Navigate to [Ansible Galaxy](./Ansible%20Galaxy/) for detailed information.
 
   
 
