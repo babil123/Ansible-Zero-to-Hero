@@ -1,5 +1,5 @@
 # Ansible Galaxy**
-<img src="https://github.com/bhuvan-raj/Ansible-Zero-to-Hero/blob/main/assets/galaxy.png" alt="Banner" />
+<img src="https://github.com/bhuvan-raj/Ansible-Zero-to-Hero/blob/main/assets/galaxy.png" alt="Banner" width=80 height= 50 />
 
 ---
 
