@@ -1,6 +1,8 @@
 #  Ansible Collections 
 <img src="https://github.com/bhuvan-raj/Ansible-Zero-to-Hero/blob/main/assets/collection.png" alt="Banner" width=800 height= 400 />
-## 🔷 1. What is an Ansible Collection?
+
+
+## 1. What is an Ansible Collection?
 
 Ansible **Collections** are a **packaging and distribution format** for Ansible content — introduced in **Ansible 2.9**.
 
