@@ -1,4 +1,6 @@
-# 🧩 **Secret Management in Ansible with Ansible Vault**
+#  **Secret Management with Ansible Vault**
+
+<img src="https://github.com/bhuvan-raj/Ansible-Zero-to-Hero/blob/main/assets/vault.png" alt="Banner" />
 
 ## 📘 1. What is Secret Management in Ansible?
 
@@ -15,6 +17,8 @@ To prevent that, **Ansible Vault** is used — it encrypts sensitive data and in
 ---
 
 ## 🔐 2. What is Ansible Vault?
+
+<img src="https://github.com/bhuvan-raj/Ansible-Zero-to-Hero/blob/main/assets/vault2.png" alt="Banner"/>
 
 **Ansible Vault** is a **built-in encryption feature** of Ansible that allows you to:
 
